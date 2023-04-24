@@ -1,0 +1,75 @@
+BUSINESSES
+-----------
+
+Add a business
+curl -v -X POST -H "Content-Type: application/json" -d '{
+  "name": "Humpty Dumpty",
+  "address": "1233 SE",
+  "city": "ottawa",
+  "state": "OR",
+  "zip": "97702",
+  "phone": "541-908-2285",
+  "category": "Restaurant",
+  "subcategories": ["cheeze"],
+  "website": "https://krestaurant.com",
+  "email": "kunalrestaurant@gmail.com"
+}' \
+http://localhost:3000/businesses
+
+Get a business with ID
+curl http://localhost:3000/businesses/1
+
+Modify a business with id
+curl -v -X PUT -H "Content-Type: application/json" \
+-d '{"name":"Anita'\''s kitchen","address":"78 se.","city":"okawa","state":"CA","zip":"97708","phone":"9086751234","category":"Restaurant","subcategories":["Burgers","Pizza"],"website":"http://raid.com","email":"raid@example.com"}' \
+http://localhost:3000/businesses/1
+
+list of businesses
+curl -X GET http://localhost:3000/businesses      
+
+Delete a business 
+curl -X DELETE http://localhost:3000/businesses/1
+
+
+
+REVIEWS 
+----------
+
+Add a review
+curl -X POST -H "Content-Type: application/json" \
+-d '{"starRating": 4, "dollarRating": 2, "review": "Very delicious!"}' \
+http://localhost:3000/reviews
+
+list all the reviews
+curl -X GET http://localhost:3000/reviews
+
+Update a review 
+curl -v -X PUT -H "Content-Type: application/json" -d '{"starRating":"4","dollarRating":"2","review":"This is an updated review"}' http://localhost:3000/reviews/0
+
+Delete a review 
+curl -X DELETE http://localhost:3000/reviews/1
+
+
+
+PHOTOS
+-------
+
+Add a photo
+curl -X POST -H "Content-Type: application/json" -d '{"imageFile": "/food.jpg", "caption": " Hit the spot!"}' http://localhost:3000/photos
+
+Modify an existing photo
+curl -X PUT -H "Content-Type: application/json" -d '{"imageFile": "/test.jpg", "caption": "fixed it!"}' http://localhost:3000/photos/0
+
+List of all photos 
+curl -X GET http://localhost:3000/photos
+
+Delete a photo
+curl -X DELETE http://localhost:3000/photos/1
+
+
+
+list of businesses by photo id
+curl -X GET http://localhost:3000/photos/0/businesses?page=1
+
+list of reviews by photo id
+curl -X GET http://localhost:3000/photos/0/reviews?page=2

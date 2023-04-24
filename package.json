@@ -1,0 +1,24 @@
+{
+  "name": "cs_493_project_1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kunaljhatta/CS_493_Project_1.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kunaljhatta/CS_493_Project_1/issues"
+  },
+  "homepage": "https://github.com/kunaljhatta/CS_493_Project_1#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
